@@ -1,10 +1,13 @@
 /* Reset básico y variables globales */
 :root {
-    --color-primario: #2c3e50;
-    --color-secundario: #3498db;
-    --color-texto: #333;
-    --color-fondo: #f5f6fa;
-    --color-blanco: #ffffff;
+    --primary-color: #2c3e50;     
+    --secondary-color: #3498db;    
+    --accent-color: #e74c3c;      
+    --background-light: #ecf0f1;   
+    --text-dark: #2c3e50;         
+    --text-light: #ffffff;        
+    --success-color: #27ae60;     
+    --warning-color: #f1c40f;    
     --sombra: 0 2px 5px rgba(0,0,0,0.1);
 }
 
@@ -16,25 +19,28 @@
 
 /* Estilos generales */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-light);
+    color: var(--text-dark);
     line-height: 1.6;
-    color: var(--color-texto);
-    background-color: var(--color-fondo);
+    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
 }
 
 /* Encabezados */
 h1, h2, h3 {
     margin-bottom: 1rem;
-    color: var(--color-primario);
+    color: var(--primary-color);
 }
 
 h1 {
     font-size: 2.5rem;
     font-weight: 700;
+    border-bottom: 3px solid var(--secondary-color);
+    padding-bottom: 0.5rem;
 }
 
 h2 {
     font-size: 2rem;
+    color: var(--secondary-color);
 }
 
 h3 {
@@ -43,14 +49,13 @@ h3 {
 
 /* Enlaces */
 a {
-    color: var(--color-secundario);
+    color: var(--secondary-color);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: var(--color-primario);
-    text-decoration: underline;
+    color: var(--accent-color);
 }
 
 /* Imágenes */
@@ -70,11 +75,11 @@ img {
 
 /* Secciones */
 section {
-    padding: 2rem 0;
-    margin: 1rem 0;
-    background-color: var(--color-blanco);
+    padding: 2rem;
+    margin: 2rem 0;
+    background: var(--text-light);
     border-radius: 10px;
-    box-shadow: var(--sombra);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Párrafos */
@@ -107,8 +112,8 @@ th, td {
 }
 
 th {
-    background-color: var(--color-primario);
-    color: var(--color-blanco);
+    background-color: var(--primary-color);
+    color: var(--text-light);
 }
 
 /* Formularios */
@@ -121,8 +126,8 @@ input, textarea {
 }
 
 button {
-    background-color: var(--color-secundario);
-    color: var(--color-blanco);
+    background-color: var(--secondary-color);
+    color: var(--text-light);
     padding: 0.5rem 1rem;
     border: none;
     border-radius: 4px;
@@ -131,7 +136,7 @@ button {
 }
 
 button:hover {
-    background-color: var(--color-primario);
+    background-color: var(--primary-color);
 }
 
 /* Efectos hover en imágenes */
@@ -241,5 +246,115 @@ img:hover {
         width: 90%;
         max-width: 300px;
         margin: 0 auto;
+    }
+}
+
+/* Estilos para tablas mejorados */
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    background: var(--text-light);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.schedule-table thead {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+}
+
+.schedule-table th,
+.schedule-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.schedule-table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.schedule-table tbody tr:hover {
+    background-color: #f1f4f6;
+    transition: background-color 0.3s ease;
+}
+
+
+
+/* Agregar estos estilos adicionales */
+
+/* Estilos para secciones */
+section {
+    padding: 2rem;
+    margin: 2rem 0;
+    background: var(--text-light);
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Títulos mejorados */
+h1, h2, h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    border-bottom: 3px solid var(--secondary-color);
+    padding-bottom: 0.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+    color: var(--secondary-color);
+}
+
+/* Enlaces mejorados */
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+/* Botones mejorados */
+.btn {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .schedule-table {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    section {
+        padding: 1rem;
+        margin: 1rem 0;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
     }
 }

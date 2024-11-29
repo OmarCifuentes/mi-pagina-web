@@ -168,3 +168,78 @@ img:hover {
         font-size: 1.8rem;
     }
 }
+
+/* Estilos para la calculadora */
+.calculator-container {
+    position: fixed;
+    right: 10%;
+    top: 30%;
+    transform: translateY(-50%);
+}
+
+.calculator {
+    width: 300px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    padding: 20px;
+}
+
+.calculator h3 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.calc-display {
+    margin-bottom: 20px;
+}
+
+.calc-display input {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f9f9f9;
+    text-align: right;
+}
+
+.calc-body input,
+.calc-body select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.calc-button {
+    width: 100%;
+    padding: 10px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.calc-button:hover {
+    background: #2980b9;
+}
+
+/* Hacer la calculadora responsive */
+@media (max-width: 768px) {
+    .calculator-container {
+        position: static;
+        margin: 20px auto;
+        transform: none;
+    }
+    
+    .calculator {
+        width: 90%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+}
